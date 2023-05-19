@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  padding: 50px;
+}
+
+div {
+  padding-bottom: 20px;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}

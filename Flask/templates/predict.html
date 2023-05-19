@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/predict" method="post">
+      <h1>Airline-Passenger-Satisfaction</h1>
+      <br />
+      <h3>{{prediction_text}}</h3>
+      <br />
+      <div>
+        <p>Class</p>
+        <select name="Gender" id="Gender">
+          <option value="Male" selected>Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div>
+        <p>Age</p>
+        <input type="number" name="Age" id="Age" />
+      </div>
+      <div>
+        <p>Type_of_Travel</p>
+        <select name="Type_of_Travel" id="Type_of_Travel">
+          <option value="Business travel" selected>Business travel</option>
+          <option value="Personal Travel">Personal Travel</option>
+        </select>
+      </div>
+      <div>
+        <p>Class</p>
+        <select name="Class" id="Class">
+          <option value="Business" selected>Business</option>
+          <option value="Eco">Eco</option>
+          <option value="Eco Plus">Eco Plus</option>
+        </select>
+      </div>
+      <div>
+        <p>Flight_Distance</p>
+        <select name="Flight_Distance" id="Flight_Distance">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Inflight_wifi_service</p>
+        <select name="Inflight_wifi_service" id="Inflight_wifi_service">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Departure_Arrival_time_convenient</p>
+        <select
+          name="Departure_Arrival_time_convenient"
+          id="Departure_Arrival_time_convenient"
+        >
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Ease_of_Online_booking</p>
+        <select name="Ease_of_Online_booking" id="Ease_of_Online_booking">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Gate_location</p>
+        <select name="Gate_location" id="Gate_location">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Food_and_drink</p>
+        <select name="Food_and_drink" id="Food_and_drink">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Online_boarding</p>
+        <select name="Online_boarding" id="Online_boarding">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Seat_comfort</p>
+        <select name="Seat_comfort" id="Seat_comfort">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Inflight_entertainment</p>
+        <select name="Inflight_entertainment" id="Inflight_entertainment">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>On_board_service</p>
+        <select name="On_board_service" id="On_board_service">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Leg_room_service</p>
+        <select name="Leg_room_service" id="Leg_room_service">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Baggage_handling</p>
+        <select name="Baggage_handling" id="Baggage_handling">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Checkin_service</p>
+        <select name="Checkin_service" id="Checkin_service">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Inflight_service</p>
+        <select name="Inflight_service" id="Inflight_service">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Cleanliness</p>
+        <select name="Cleanliness" id="Cleanliness">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <p>Departure_Delay_in_Minutes</p>
+        <select
+          name="Departure_Delay_in_Minutes"
+          id="Departure_Delay_in_Minutes"
+        >
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Arrival_Delay_in_Minutes</p>
+        <select name="Arrival_Delay_in_Minutes" id="Arrival_Delay_in_Minutes">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
